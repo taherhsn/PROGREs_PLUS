@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Pages.css">
+</head>
+<body>
+  
+  <main class="background" id="chcolor">
+   <div class="star s1"><div></div><div></div><div></div></div>
+<div class="star s2"><div></div><div></div><div></div></div>
+<div class="star s3"><div></div><div></div><div></div></div>
+
+    <section id="loginView" class="login-card" style="display: block;">
+      <div class="brand">
+        <div class="logo">
+             <div class="logo-circle">P
+    
+             </div>
+        </div>
+        <h1 class="title">Progress Plus</h1>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <input class="input" id="regNumber" placeholder="Registration Number" required />
+        <input class="input" id="password" type="password" placeholder="Password" required />
+        <p id="errorText" class="error"></p>
+        <button class="btn" type="submit">Login</button>
+      </form>
+    </section>
+    
+
+    <!--  -->
+
+
+   <div id="Layout" class="layout" style="display: none;">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <!-- Brand -->
+
+      <div class="sidebar-brand">
+        <div class="logo-carre">
+        <div class="logo-circle-s">P</div> 
+      </div> <span id="txt">Progress Plus</span> 
+       </div> 
+      
+
+      <!-- User info -->
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebarAvatar"> <img src="photoprofil.png" alt=""> </div>
+        <div class="sidebar-user-info">
+          <div class="user-name" id="sidebarName"></div>
+          <div class="user-P" id="sideP"><span id="sidebarP">2nd Year CS</span><br><span id="sidebarID">202434116518</span></div>
+        </div>
+      </div>
+
+      <!-- Nav links -->
+      <a class="nav-link" id="navNotif" onclick="showView('notif')">
+        <span class="icon"></span><span class="notif-ico"><img src="NEW.png" alt=""></span> Notifications 
+      </a>
+      <a class="nav-link" id="navMarks" onclick="showView('marks')">
+        <span class="icon"><span class="notif-ico"><img src="Acadimicmarks.png" alt=""></span> Academic Marks</span>
+      </a>
+      <a class="nav-link" id="navTimetable" onclick="showView('timetable')">
+        <span class="icon"><span class="notif-ico"><img src="timetable.png" alt=""></span> The Timetable</span>
+      </a>
+      <a class="nav-link" id="navAdmin" onclick="showView('admin')" >
+        <span class="icon"><span class="notif-ico"><img src="administrative.png" alt=""></span> Administrative</span>
+      </a>
+      <a class="nav-link" id="navElearn" onclick="showView('elearn')">
+        <span class="icon"><span class="notif-ico"><img src="E-learning.png" alt=""></span> E-Learning</span>
+      </a>
+
+      <!-- Space -->
+      <div class="sidebar-sep"></div>
+
+
+      <!-- Settings -->
+      <div class="sidebar-settings" onclick="showView('settings')">
+        <span class="icon"><span class="notif-ico"><img src="settings.png" alt=""></span> Settings</span>
+      </div>
+
+    </aside>
+
+    
+    <div class="main-content">
+
+
+     <!-- NOTIFICATIONS -->
+
+       <div id="viewNotif" style="display:block;">
+
+        <!--1 -->
+        <div class="notif-card">
+          <div class="notif-body">
+            <div class="notif-cat"><span class="notif-ico"><img src="administrative.png" alt=""></span> Administrative</div>
+            <div class="notif-title">Action Required : Justification</div>
+            <div class="notif-desc">
+              You must complete Uploading by <b>Tomorrow</b>.
+              If not completed on time, You'll be listed as
+              <span class="red-text">Absent in POO TD For The Second Time</span>.
+            </div>
+          </div>
+          <button class="more-btn">MORE ▶</button>
+        </div>
+
+        <!--  2 -->
+        <div class="notif-card">
+          <div class="notif-body">
+            <div class="notif-cat"><span class="notif-ico"><img src="Acadimicmarks.png" alt=""> </span>Academic Marks</div>
+            <div class="notif-title">Academic Notice – Marks Published</div>
+            <div class="notif-desc">
+              Your marks for <b>SI For 2nd Semester</b> are now available on the student
+              portal : <span class="text">[Portal &gt; Academic Marks]</span>.
+            </div>
+          </div>
+          <button class="more-btn">MORE ▶</button>
+        </div>
+
+        <!-- 3 -->
+        <div class="notif-card">
+          <div class="notif-body">
+            <div class="notif-cat"><span class="notif-ico"><img src="Administrative.png" alt=""></span> Administrative</div>
+            <div class="notif-title">Action Required : Transfert</div>
+            <div class="notif-desc">
+              You must complete Uploading All Your Documents by <b>October 11<sup>th</sup></b>.
+              If not completed on time, You'd still be listed as
+              <span class="red-text">USDB STUDENT</span>.
+            </div>
+          </div>
+          <button class="more-btn">MORE ▶</button>
+        </div>
+
+        <!-- 4 -->
+        <div class="notif-card">
+          <div class="notif-body">
+            <div class="notif-cat"><span class="notif-ico"><img src="timetable.png" alt=""></span> The Timetable</div>
+            <div class="notif-title">Timetable Update – Please Recheck</div>
+            <div class="notif-desc">
+              The timetable has been updated on <b>Tuesday</b> due to
+              <b>room changes</b> &amp; <b>instructor availability</b>.
+            </div>
+          </div>
+          <button class="more-btn">MORE ▶</button>
+        </div>
+
+      </div>
+
+
+
+     <!--ACADEMIC MARKS -->
+    <div id="viewMarks" class="view" style="display: none;">
+
+        
+        <div class="top-row">
+
+          
+          <div class="glass-card avg-card">
+            <div class="card-title">Overall Average</div>
+            <div class="big-avg">10.01</div>
+            <div class="prog-track">
+              <div class="prog-fill" style="width: 50%;"></div>
+            </div>
+            <div class="stats-row">
+              <div>
+                <div class="stat-label">Class Passed</div>
+                <div class="stat-val">4/7</div>
+              </div>
+              <div>
+                <div class="stat-label">Class Failed</div>
+                <div class="stat-val">3/7</div>
+              </div>
+              <div>
+                <div class="stat-label">Credit</div>
+                <div class="stat-val">30</div>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class="glass-card notes-card">
+            <div class="card-title">Notes</div>
+            <div class="note-row"><span>Dr.Ouled-Aissa</span><span class="pill-open">Open</span></div>
+            <div class="note-row"><span>Dr.Nahal</span><span class="pill-open">Open</span></div>
+            <div class="note-row"><span>Dr.Cheba-Mouna</span><span class="pill-open">Open</span></div>
+            <div class="note-row"><span>Dr.Ferfara</span><span class="pill-open">Open</span></div>
+          </div>
+
+        </div>
+       
+
+        
+
+        <div class="bottom-row">
+
+        
+          <div class="glass-card table-card">
+            <table class="marks-table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Coef</th>
+                  <th>Credit</th>
+                  <th>TD</th>
+                  <th>TP</th>
+                  <th>Exam</th>
+                  <th>Avg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Architecture D'ordi</td>
+                  <td >3</td><td >5</td>
+                  <td>8</td><td>8</td><td>15</td>
+                  <td><span class="avg-ok">12.20</span></td>
+                </tr>
+                <tr>
+                  <td>Algorithmes</td>
+                  <td >4</td><td>6</td>
+                  <td>9</td><td>12</td><td>5</td>
+                  <td><span class="avg-bad">7.20</span></td>
+                </tr>
+                <tr>
+                  <td>SI</td>
+                  <td >2</td><td >4</td>
+                  <td>13</td><td>/</td><td>10</td>
+                  <td><span class="avg-bad">7.20</span></td>
+                </tr>
+                <tr>
+                  <td>POO</td>
+                  <td >4</td><td >5</td>
+                  <td>10</td><td>/</td><td>7</td>
+                  <td><span class="avg-bad">8.20</span></td>
+                </tr>
+                <tr>
+                  <td>Méthodes Num</td>
+                  <td >2</td><td >4</td>
+                  <td>/</td><td>15</td><td>9</td>
+                  <td><span class="avg-ok">11.40</span></td>
+                </tr>
+                <tr>
+                  <td>Proba & Stats</td>
+                  <td >2</td><td >4</td>
+                  <td>13</td><td>/</td><td>12</td>
+                  <td><span class="avg-ok">12.40</span></td>
+                </tr>
+                <tr>
+                  <td>Anglais</td>
+                  <td >1</td><td >2</td>
+                  <td>/</td><td>/</td><td>12</td>
+                  <td><span class="avg-ok">12</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        
+          <div class="glass-card missed-card">
+            <div class="card-title">Missed</div>
+            <table class="mini-table">
+              <thead>
+                <tr><th>Class</th><th>Missed</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Architecture D'ordi</td><td class="missed-num">2</td></tr>
+                <tr><td>Algorithmes</td><td class="missed-num">0</td></tr>
+                <tr><td>SI</td><td class="missed-num">1</td></tr>
+                <tr><td>POO</td><td class="missed-num">0</td></tr>
+                <tr><td>Méthodes Num</td><td class="missed-num">0</td></tr>
+                <tr><td>Proba & Stats</td><td class="missed-num">2</td></tr>
+                <tr><td>Anglais</td><td class="missed-num">1</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+  
+
+      </div>
+
+
+
+      <!-- EMPLOI DE TEMPS -->
+
+<div id="viewTimetable" style="display:none;">
+
+       
+
+        <div class="day-tabs">
+          <button class="day-tab" onclick="showDay('sat', this)">Saturday</button>
+          <button class="day-tab" onclick="showDay('sun', this)">Sunday</button>
+          <button class="day-tab" onclick="showDay('mon', this)">Monday</button>
+          <button class="day-tab" onclick="showDay('tue', this)">Tuesday</button>
+          <button class="day-tab" onclick="showDay('wed', this)">Wednesday</button>
+          <button class="day-tab" onclick="showDay('thu', this)">Thursday</button>
+        </div>
+
+    
+        <div class="filters-row">
+          <select class="filter-select">
+            <option>Section </option>
+            <option>Section A</option>
+            <option>Section B</option>
+          </select>
+          <select class="filter-select">
+            <option>Groupe </option>
+            <option>Groupe 1</option>
+            <option>Groupe 2</option>
+          </select>
+          <select class="filter-select">
+            <option>Filter </option>
+            <option>All</option>
+            <option>Lecture</option>
+            <option>TD</option>
+            <option>TP</option>
+          </select>
+        </div>
+
+
+   
+        <div id="daySat" style="display:none;">
+          <div class="no-class">No classes on Saturday </div>
+        </div>
+
+
+
+        <div id="daySun" style="display:none;">
+
+          <div class="no-class">No classes on Sunday </div>
+        </div>
+    
+
+       <div id="dayMon" style="display:none;">
+         <div class="tableT">
+           <div class="schedule-row" >
+            <div class="time-block">
+              <div class="time-start">8:00</div>
+              <div class="time-arrow">↳</div>
+              <div class="time-end">9:30</div>
+            </div>
+            <div class="subject-info">
+              <div class="subject-name" id="red">Architecture D'ordinateur</div>
+              <div class="type-teacher">
+                <span class="type-p type-lecture">Lecture</span>
+                <span class="teacher-name">Dr. Tahar </span>
+              </div>
+            </div>
+            <div class="room-text">Amphi A</div>
+            <div class="status status-ended">ENDED</div>
+          </div>
+
+         
+          <div class="schedule-row" id="A">
+            <div class="time-block">
+              <div class="time-start">9:35</div>
+              <div class="time-arrow">↳</div>
+              <div class="time-end">11:05</div>
+            </div>
+            <div class="subject-info">
+              <div class="subject-name" id="red">POO</div>
+              <div class="type-teacher">
+                <span class="type-p type-lecture">Lecture</span>
+                <span class="teacher-name" >Dr. Houcine</span>
+              </div>
+            </div>
+            <div class="room-text">Amphi A</div>
+            <div class="status status-ended">ENDED</div>
+          </div>
+
+      
+          <div class="schedule-row" >
+            <div class="time-block">
+              <div class="time-start">11:10</div>
+              <div class="time-arrow">↳</div>
+              <div class="time-end">12:40</div>
+            </div>
+            <div class="subject-info">
+              <div class="subject-name" id="blue">Architecture D'ordinateur</div>
+              <div class="type-teacher">
+                <span class="type-p type-td">TD</span>
+                <span class="teacher-name">Dr. Tahar </span>
+              </div>
+            </div>
+            <div class="room-text">Salle 176</div>
+            <div class="status status-ended">ENDED</div>
+          </div>
+
+        
+          <div class="schedule-row" id="A">
+            <div class="time-block">
+              <div class="time-start">13:00</div>
+              <div class="time-arrow">↳</div>
+              <div class="time-end">14:30</div>
+            </div>
+            <div class="subject-info">
+              <div class="subject-name" id="blue">POO</div>
+              <div class="type-teacher">
+                <span class="type-p type-td">TD</span>
+                <span class="teacher-name">Dr. Houcine</span>
+              </div>
+            </div>
+            <div class="room-text">Salle 192</div>
+            <div class="status status-progress">IN PROGRESS</div>
+          </div>
+
+          
+          <div class="schedule-row" >
+            <div class="time-block">
+              <div class="time-start">14:35</div>
+              <div class="time-arrow">↳</div>
+              <div class="time-end">16:05</div>
+            </div>
+            <div class="subject-info">
+              <div class="subject-name">Méthodes Numériques</div>
+              <div class="type-teacher">
+                <span class="type-p type-tp">TP</span>
+                <span class="teacher-name">Dr. Djilali</span>
+              </div>
+            </div>
+            <div class="room-text">Salle TP1</div>
+            <div class="status status-upcoming">UPCOMING</div>
+          </div>
+         </div>
+        </div>
+        
+
+       
+        <div id="dayTue" style="display:none;">
+ <div class="no-class">No classes on Tuesday </div>
+        </div>
+
+      
+        <div id="dayWed" style="display:none;">
+       <div class="no-class">No classes on Wednesday </div>
+        </div>
+      
+        
+        <div id="dayThu" style="display:none;">
+          <div class="no-class">No classes on Thursday </div>
+    </div>
+
+  </div>
+
+
+
+  <div id="viewAdmin" class="admin-view" style="display:none;">
+
+  <div class="admin-grid">
+
+   
+    <div class="admin-col">
+
+    
+      <div class="glass-card admin-idcard">
+        
+        <img src="cardU.png" alt="Student ID Card">
+      </div>
+
+    
+      <div class="glass-card admin-fees">
+        <div class="admin-card-title">Registration Fees</div>
+
+        <div class="fees-list">
+          <div class="fee-row"><span>Card Fee</span><span class="pill paid">Payed</span></div>
+          <div class="fee-row"><span>Bus Fee</span><span class="pill paid">Payed</span></div>
+          <div class="fee-row"><span>Residence Fee</span><span class="pill unpaid">Not Payed</span></div>
+          <div class="fee-row"><span>Assurance Fee</span><span class="pill paid">Payed</span></div>
+          <div class="fee-row"><span>Food Fee</span><span class="pill unpaid">Not Payed</span></div>
+          <div class="fee-row"><span>Library Fee</span><span class="pill unpaid">Not Payed</span></div>
+          <div class="fee-row"><span>Transfer Fee</span><span class="pill paid">Payed</span></div>
+          <div class="fee-row"><span>E-Learning Fee</span><span class="pill unpaid">Not Payed</span></div>
+        </div>
+      </div>
+
+      
+      <div class="glass-card admin-justif">
+        <div class="admin-card-title">Justifications</div>
+
+        <div class="justif-row">
+          <div class="justif-box">
+            <div class="justif-label">Day</div>
+            <div class="justif-value" id="justifDay">00</div>
+          </div>
+
+          <div class="justif-box">
+            <div class="justif-label">Time</div>
+            <div class="justif-value" id="justifTime">00:00</div>
+          </div>
+
+          <button class="upload-btn" type="button" title="Upload">
+            ⬆
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+   
+    <div class="admin-col">
+
+     
+      <div class="glass-card admin-debts">
+        <div class="admin-card-title big-center">Debts</div>
+        <p class="admin-text">
+          According to our records,<br>
+          you have no outstanding<br>
+          <b>debts registered</b><br>
+          under your name at this time.
+        </p>
+      </div>
+
+     
+      <div class="glass-card admin-holidays">
+        <div class="admin-card-title big-center">Holidays</div>
+        <ul class="holidays-list">
+          <li>Jan 1 (Thu): New Year’s Day.</li>
+          <li>Jan 12 (Mon): Yennaye</li>
+          <li>Feb 22 (Sun): Day of Fraternity and Unity.</li>
+          <li>Mar 20 (Fri): Eid al-Fitr</li>
+          <li>Mar 21 (Sat): Eid al-Fitr Holiday</li>
+          <li>Mar 22 (Sun): Eid al-Fitr Holiday</li>
+          <li>May 1 (Fri): Labour Day</li>
+          <li>May 27 (Wed): Eid al-Adha</li>
+          <li>May 28 (Thu): Eid al-Adha Holiday</li>
+          <li>Jun 17 (Wed): Muharram</li>
+          <li>Jun 26 (Fri): Ashura (date may vary)</li>
+          <li>Jul 5 (Sun): Independence Day</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+  
+        <div id="viewElearn" style="display:none;">
+          <div class="glass-card" style="text-align:center; padding:40px;">
+            <h2 style="color:var(--green-dark);"> E-Learning</h2>
+            <p style="color:#555; margin-top:10px;">Coming</p>
+          </div>
+         </div>
+
+      </div>
+
+
+      </div>
+
+    <button class="help">!</button>
+  </main>
+
+  <script src="login.js"></script>
+
+</body>
+</html>
