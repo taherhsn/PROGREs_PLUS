@@ -55,9 +55,11 @@ form.addEventListener("submit", function (e) {
 
   if (!student) {
     errorText.textContent = "Registration Number not found.";
+
     setTimeout(() => {
       errorText.textContent = "";
     }, 2500);
+
     return;
   }
 
@@ -72,9 +74,9 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  document.getElementById("sidebarName").textContent   = student.name;
-  document.getElementById("sidebarP").textContent = student.program;
-  document.getElementById("sidebarID").textContent     = student.id;
+  document.getElementById("sidebarName").textContent=student.name;
+  document.getElementById("sidebarP").textContent=student.program;
+  document.getElementById("sidebarID").textContent=student.id;
 
   
 
@@ -132,7 +134,7 @@ document.getElementById("navTimetable").addEventListener("click", () => showView
 document.getElementById("navAdmin").addEventListener("click", () => showView("admin"));
 document.getElementById("navElearn").addEventListener("click", () => showView("elearn"));
 
-
+window.showView = showView;
 
 function showDay(day, btn) {
   const map = {
@@ -160,5 +162,4 @@ function showDay(day, btn) {
   allBtns.forEach(b => b.classList.remove("active"));
   if (btn) btn.classList.add("active");
 }
-
 window.showDay = showDay;
